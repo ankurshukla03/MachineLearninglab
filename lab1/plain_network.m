@@ -15,15 +15,15 @@ close all;
 net = init(net);
 net.trainParam.lr = 0.01;
 [trained_net, stats] = train(net, p, t);
-plot_perf(stats, 0.01);
+plot_perf(stats, 'lr = 0.01');
 
 net = init(net);
 net.trainParam.lr = 2;
 [trained_net, stats] = train(net, p, t);
-plot_perf(stats, 2);
+plot_perf(stats, 'lr = 2');
 
 net = init(net);
 net.trainParam.lr = 20;
 [trained_net, stats] = train(net, p, t);
-plot_perf(stats, 20);
+plot_perf(stats, 'lr = 20');
 
