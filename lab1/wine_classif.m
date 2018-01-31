@@ -30,3 +30,8 @@ plot(stats.perf);
 figure(2)
 % we cannot subplot confusion matrices :( 
 plotconfusion(wineTargets, sim(trained_net, wineInputs));
+
+% Soon we can use this and compare performance.
+% normWineInputs = mapminmax(wineInputs)
+
+
