@@ -1,3 +1,5 @@
+
+
 % TASK 3
 clear all;
 
@@ -19,19 +21,20 @@ net.trainParam.delt_dec = 0.9; % ensures the network does not shift too far one 
 % net.trainParam.lr = 0.1;
 [trained_net, stats] = train(net, p, t);
 
-rows = 1;
-cols = 2;
-
 close all;
 grid on
 figure(1)
 plot(stats.perf);
 
-figure(2)
-% we cannot subplot confusion matrices :( 
 plotconfusion(wineTargets, sim(trained_net, wineInputs));
+title('No normalization');
 
-% Soon we can use this and compare performance.
-% normWineInputs = mapminmax(wineInputs)
+% Use this and compare performance.
+normWineInputs = mapminmax(wineInputs);
+netNorm = newff(p, t, [1], {'tansig' 'logsig'}, 'trainrp', '', 'mse', {}, {}, '');
+netNorm = init(netNorm);
+[trained_net, stats] = train(netNorm, normWineInputs, t);
 
+plotconfusion(wineTargets, sim(trained_net, normWineInputs));
+title('With normalization');
 
