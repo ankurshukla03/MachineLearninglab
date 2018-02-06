@@ -13,17 +13,17 @@ net = newff(p, t, [2], {'tansig' 'logsig'}, 'traingd', '', 'mse', {}, {}, '');
 
 close all;
 net = init(net);
-net.trainParam.lr = 0.01;
+net.trainParam.lr = 1;
 [trained_net, stats] = train(net, p, t);
 plot_perf(stats, 'lr = 0.01');
 
-net = init(net);
-net.trainParam.lr = 2;
-[trained_net, stats] = train(net, p, t);
-plot_perf(stats, 'lr = 2');
+% net = init(net);
+% net.trainParam.lr = 2;
+% [trained_net, stats] = train(net, p, t);
+% plot_perf(stats, 'lr = 2');
 
-net = init(net);
-net.trainParam.lr = 20;
-[trained_net, stats] = train(net, p, t);
-plot_perf(stats, 'lr = 20');
+% net = init(net);
+% net.trainParam.lr = 20;
+% [trained_net, stats] = train(net, p, t);
+% plot_perf(stats, 'lr = 20');
 
