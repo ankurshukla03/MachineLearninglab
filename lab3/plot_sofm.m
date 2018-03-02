@@ -1,13 +1,19 @@
 %%Task1
 
+clear all;
 load sphere_data.mat;
-%som = newsom(P10, [10 10], 'hextop', 'linkdist', 100, 5);
-som = newsom(P30, [10 10], 'hextop', 'linkdist', 100, 5);
+som10 = newsom(P10, [10 10], 'hextop', 'linkdist', 100, 5);
+som20 = newsom(P20, [10 10], 'hextop', 'linkdist', 100, 5);
+som30 = newsom(P30, [10 10], 'hextop', 'linkdist', 100, 5);
 
 %Training SOFM by P10data set
-%[som_P10, stats] = train(som, P10);
-[som_P30, stats] = train(som, P30);
+[som_P10, stats] = train(som10, P10);
+[som_P20, stats] = train(som20, P20);
+[som_P30, stats] = train(som30, P30);
 
+save('som_P10.mat','som_P10');
+save('som_P20.mat','som_P20');
+save('som_P30.mat','som_P30');
 %plotsomhits(som_P10, P10(:,1:100)) % Winning nodes for F1.
 %plotsomhits(som_P10, P10(:,101:200)) % Winning nodes for F2
 
