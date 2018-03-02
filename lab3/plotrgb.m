@@ -1,10 +1,9 @@
 clear all;
 load rgb_data.mat
 
-somrgb = newsom(RGB, [10 10], 'gridtop', 'linkdist', 100, 5);
+% tweak epochs, initial neighborhood size
+somrgb = newsom(RGB, [10 10], 'gridtop', 'linkdist', 100, 6);
 
+[trained_som, stats] = train(somrgb, RGB);
 
-%somrgb.trainParams.epochs = 200;
-[som_rgb, stats] = train(somrgb, RGB);
-
-plot_colors(som_rgb);
+plot_colors(trained_som);
