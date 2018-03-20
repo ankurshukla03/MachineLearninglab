@@ -1,10 +1,12 @@
-clear all;
+close all;
 load rgb_data.mat
 
-somrgb = newsom(RGB, [10 10], 'gridtop', 'linkdist', 100, 5);
+% tweak epochs, initial neighborhood size
+% high neighbor hood size -> more desaturated, 3 is sufficient.
+% high order steps -> more smooth, 100 is sufficient
+% high epochs -> overtrained?
+somrgb = newsom(RGB, [10 10], 'gridtop', 'linkdist', 100, 3);
+somrgb.trainParam.epochs = 100; % 100 seems good
+[trained_som, stats] = train(somrgb, RGB);
 
-
-%somrgb.trainParams.epochs = 200;
-[som_rgb, stats] = train(somrgb, RGB);
-
-plot_colors(som_rgb);
+plot_colors(trained_som);
