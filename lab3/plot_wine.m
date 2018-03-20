@@ -1,9 +1,9 @@
 clear all;
 load wine_dataset;
 
-somwine = newsom(wineInputs, [5 5], 'hextop', 'linkdist', 100, 5);
+somwine = newsom(wineInputs, [5 5], 'hextop', 'linkdist', 300, 6);
 
-somwine.trainParam.epochs = 100;
+somwine.trainParam.epochs = 300;
 [som_wine, stats] = train(somwine, wineInputs);
 
 %plotsomhits(som_wine, wineInputs(:,1:59))%winning node for class I
