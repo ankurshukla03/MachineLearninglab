@@ -2,7 +2,7 @@ clear all;
 load wine_dataset;
 normWineInputs = mapminmax(wineInputs);
 
-somwine = newsom(normWineInputs, [5 5], 'hextop', 'linkdist', 300, 6);
+somwine = newsom(normWineInputs, [10 10], 'hextop', 'linkdist', 300, 6);
 
 somwine.trainParam.epochs = 300;
 [som_wine, stats] = train(somwine, normWineInputs);
