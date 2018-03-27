@@ -1,7 +1,7 @@
 load iris_dataset;
 
-somiris = newsom(irisInputs, [10 10], 'hextop', 'linkdist', 2000, 4);
-somiris.trainParam.epochs = 2000; % 100 seems good
+somiris = newsom(irisInputs, [10 10], 'hextop', 'linkdist', 200, 4);
+somiris.trainParam.epochs = 300; % 100 seems good
 [trained_som, stats] = train(somiris, irisInputs);
 
 figure(10)
