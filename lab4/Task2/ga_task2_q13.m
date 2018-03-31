@@ -12,9 +12,9 @@ ack.visual.interval = 0.05;
 ack.stop.direction = 'min';
 ack.visual.func = 'ackley';
 %ack.mutate.proportional = false;
-ack.mutate.prob = 2;
-ack.mutate.decay = 'exponential';
-ack.crossover.func = 'linear';
+ack.mutate.prob = 0.03;
+ack.mutate.decay = 'linear';
+ack.crossover.func = 'blend';
 
 ack.replace.comparative = true;
 
