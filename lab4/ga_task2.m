@@ -35,6 +35,7 @@ hold on
 for j=1:numel(funcs)
    fprintf("%s best fit %0.2f \n", funcs{j}, bests(j)); 
    plot(diversities(j,:), 'DisplayName', funcs{j});
+   xlim([0 251]);
 end
-legend()
+legend('Location', 'northwestoutside')
 hold off
