@@ -25,6 +25,5 @@ ack.mutate.prob = 0.5;
 % for j=1:numel(funcs)
 %    fprintf("%s best fit %0.2f \n", funcs{j}, bests(j)); 
 %    plot(diversities(j,:), 'DisplayName', funcs{j});
-% end
 % legend()
 % hold off
