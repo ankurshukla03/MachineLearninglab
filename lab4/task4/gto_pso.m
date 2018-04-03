@@ -1,12 +1,5 @@
 %For PSO question 26
 options = pso_gtop_lab4('init');
-% 
-% options = psooptimset('DemoMode','fast',...
-% 'PlotFcns',{@psoplotswarmsurf,@psoplotbestf,@psoplotvelocity},...
-% 'PopInitRange',[-32;32] ,...
-% 'InertiaWeight'      , 0.7968, ... % weight
-% 'SocialAttraction'   , 1.49, ... % c1
-% 'CognitiveAttraction', 1.49);    % c2
 
 LB = options.PopInitRange(1,:);
 UB = options.PopInitRange(2,:);
